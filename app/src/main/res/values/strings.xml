@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="name">Junaid Ahmed</string>
+    <string name="android_developer">Android Developer</string>
+    <string name="phone">+92 333 8773969</string>
+    <string name="website">https://junaidahmed57.com/</string>
+    <string name="email">junaidahmed3570@gmail.com</string>
+</resources>

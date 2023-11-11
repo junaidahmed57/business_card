@@ -53,16 +53,27 @@ fun BusinessCard(){
         modifier = Modifier
             .fillMaxSize()
             .background(colorResource(id = R.color.teal_200)),
-        Arrangement.SpaceAround,
+        Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        TitleCard(name = stringResource(R.string.name),
-            title = stringResource(R.string.android_developer),
-            image = painterResource(id = R.drawable.android_logo)
-        )
-        ContactInformation(phone = stringResource(R.string.phone), website = stringResource(R.string.website), email = stringResource(
-            R.string.email)
-        )
+        Column(
+            Modifier
+                .weight(1f),
+            Arrangement.Bottom) {
+            TitleCard(name = stringResource(R.string.name),
+                title = stringResource(R.string.android_developer),
+                image = painterResource(id = R.drawable.android_logo)
+            )
+        }
+        Column(
+            Modifier
+                .weight(1f)
+                .padding(bottom = 24.dp),
+            Arrangement.Bottom) {
+            ContactInformation(phone = stringResource(R.string.phone), website = stringResource(R.string.website), email = stringResource(
+                R.string.email)
+            )
+        }
     }
 }
 
@@ -96,8 +107,8 @@ fun ContactInformation(phone: String, website: String, email: String, modifier: 
 @Composable
 fun InfoRow(value: String, icon: Painter){
     Row(Modifier.padding(8.dp)) {
-        Icon(painter = icon, contentDescription = "Phone Number", tint = Color(R.color.teal_700), modifier = Modifier.padding(end = 20.dp) )
-        Text(text = value, color = Color.DarkGray)
+        Icon(painter = icon, contentDescription = "Phone Number", tint = Color(R.color.green), modifier = Modifier.padding(end = 20.dp) )
+        Text(text = value, color = colorResource(id = R.color.green))
     }
 }
 
